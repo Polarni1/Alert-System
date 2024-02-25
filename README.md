@@ -1,2 +1,10 @@
 # Alert-System
 Alert system based on a ARIMA model. The system send Slack alerts for deviations in various metrics, and runs at daily and weekly level. The script includes everything from preprocessing to sending the actual Slack alerts.
+
+This script provides a foundational framework for a versatile alert system designed to address a wide array of data irregularities and forecasting challenges. While it lacks a specific use case in its current form, it encapsulates recurring functionalities found across numerous alert system that I have implemented. Its strength lies in its robust handling of missing data, distinguishing between systematic absences (e.g., data consistently missing on certain days) and sporadic occurrences. This distinction allows for refined data treatment, ensuring reliable performance even in datasets characterized by incomplete entries.
+
+Moreover, the script adeptly manages data delays, a common issue in real-time reporting environments. For instance, if daily revenue figures typically reach only 90% of their expected value on the initial day of reporting, the script adjusts these preliminary figures to align with their anticipated long-term value. This adjustment is crucial for maintaining accuracy in subsequent alert generation processes.
+
+The system is also equipped to handle both weekly and yearly seasonality, further enhancing its adaptability to diverse data patterns. A notable feature of this framework is its configurable alert mechanism, which bases alert triggers on multiple retroactive predictions derived from a selection of previous days or weeks. This configurability allows users to tailor the system to their specific needs, such as setting alerts to trigger only when metrics deviate significantly from the norm, as established by comparisons to multiple preceding intervals. This approach has demonstrated improved accuracy across various applications, making the script a valuable tool for developing sophisticated, customized alert systems.
+
+The SQL query is used calculate how delayed data should be adjusted.
